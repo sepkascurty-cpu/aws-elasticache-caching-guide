@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="1020" font-family="Helvetica, Arial, sans-serif">
+  <!-- white background -->
+  <rect x="0" y="0" width="1240" height="1020" fill="#ffffff"/>
+
+  <!-- AWS Cloud frame -->
+  <rect x="8" y="8" width="1224" height="1004" fill="none" stroke="#232F3E" stroke-width="2" rx="6"/>
+  <rect x="18" y="18" width="44" height="44" fill="#232F3E" rx="4"/>
+  <text x="40" y="47" text-anchor="middle" fill="#ffffff" font-size="19" font-weight="bold">aws</text>
+  <text x="72" y="47" fill="#232F3E" font-size="20" font-weight="bold">AWS Cloud</text>
+
+  <!-- Users -->
+  <g>
+    <rect x="120" y="80" width="70" height="52" fill="#ffffff" stroke="#232F3E" stroke-width="2" rx="6"/>
+    <text x="155" y="105" text-anchor="middle" font-size="13" fill="#232F3E">Users</text>
+    <text x="155" y="121" text-anchor="middle" font-size="11" fill="#666">app.example.com</text>
+  </g>
+
+  <!-- Route 53 -->
+  <g>
+    <rect x="330" y="80" width="64" height="64" fill="#8C4FFF" rx="4"/>
+    <text x="362" y="108" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">53</text>
+    <text x="362" y="124" text-anchor="middle" fill="#ffffff" font-size="10">DNS</text>
+    <text x="362" y="158" text-anchor="middle" font-size="13" font-weight="bold">Amazon Route 53</text>
+    <text x="362" y="174" text-anchor="middle" font-size="12" font-style="italic">DNS service</text>
+  </g>
+  <!-- WAF -->
+  <g>
+    <rect x="560" y="80" width="64" height="64" fill="#DD344C" rx="4"/>
+    <text x="592" y="116" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="bold">W</text>
+    <text x="592" y="158" text-anchor="middle" font-size="13" font-weight="bold">AWS WAF</text>
+    <text x="592" y="174" text-anchor="middle" font-size="12" font-style="italic">Web Application Firewall</text>
+  </g>
+  <!-- CloudFront -->
+  <g>
+    <rect x="800" y="80" width="64" height="64" fill="#8C4FFF" rx="4"/>
+    <text x="832" y="116" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="bold">CF</text>
+    <text x="832" y="158" text-anchor="middle" font-size="13" font-weight="bold">Amazon CloudFront</text>
+    <text x="832" y="174" text-anchor="middle" font-size="12" font-style="italic">CDN</text>
+  </g>
+  <!-- Shield -->
+  <g>
+    <rect x="1060" y="80" width="64" height="64" fill="#DD344C" rx="4"/>
+    <text x="1092" y="116" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="bold">S</text>
+    <text x="1092" y="158" text-anchor="middle" font-size="13" font-weight="bold">AWS Shield</text>
+    <text x="1092" y="174" text-anchor="middle" font-size="12" font-style="italic">DDoS protection</text>
+  </g>
+
+  <!-- traffic arrows: Users -> Route53 -> CloudFront, WAF, then down to ALB -->
+  <line x1="190" y1="106" x2="330" y2="106" stroke="#232F3E" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="260" y="98" text-anchor="middle" font-size="11" fill="#333">DNS lookup</text>
+  <line x1="394" y1="112" x2="540" y2="112" stroke="#232F3E" stroke-width="2"/>
+  <line x1="624" y1="112" x2="800" y2="112" stroke="#232F3E" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="712" y="104" text-anchor="middle" font-size="11" fill="#333">HTTPS (WAF filtered)</text>
+
+  <!-- VPC frame -->
+  <rect x="60" y="300" width="1120" height="688" fill="none" stroke="#7AA116" stroke-width="2.5" rx="6"/>
+  <g>
+    <rect x="70" y="308" width="48" height="40" fill="#7AA116" rx="4"/>
+    <text x="94" y="335" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">VPC</text>
+  </g>
+  <text x="130" y="335" fill="#7AA116" font-size="18" font-weight="bold">VPC 10.0.0.0/16</text>
+
+  <!-- AZ 1 (dashed) -->
+  <rect x="90" y="360" width="500" height="606" fill="#F7FAFF" stroke="#2E73B8" stroke-width="1.6" stroke-dasharray="8,5" rx="4"/>
+  <text x="340" y="388" text-anchor="middle" fill="#2E73B8" font-size="16">Availability Zone 1</text>
+
+  <!-- AZ 2 (dashed) -->
+  <rect x="650" y="360" width="500" height="606" fill="#F7FAFF" stroke="#2E73B8" stroke-width="1.6" stroke-dasharray="8,5" rx="4"/>
+  <text x="900" y="388" text-anchor="middle" fill="#2E73B8" font-size="16">Availability Zone 2</text>
+
+  <!-- Public subnets + NAT -->
+  <g>
+    <rect x="110" y="400" width="460" height="92" fill="#EAF5D6" rx="4"/>
+    <text x="130" y="426" font-size="14" font-weight="bold" fill="#4E6E00">🔒 Public subnet</text>
+    <rect x="270" y="438" width="140" height="42" fill="#8C4FFF" rx="20"/>
+    <text x="340" y="464" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">NAT gateway</text>
+  </g>
+  <g>
+    <rect x="670" y="400" width="460" height="92" fill="#EAF5D6" rx="4"/>
+    <text x="690" y="426" font-size="14" font-weight="bold" fill="#4E6E00">🔒 Public subnet</text>
+    <rect x="830" y="438" width="140" height="42" fill="#8C4FFF" rx="20"/>
+    <text x="900" y="464" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">NAT gateway</text>
+  </g>
+
+  <!-- ALB spanning AZs -->
+  <g>
+    <rect x="560" y="512" width="120" height="56" fill="#8C4FFF" rx="4"/>
+    <text x="620" y="536" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">ALB</text>
+    <text x="620" y="552" text-anchor="middle" fill="#ffffff" font-size="11">Application LB</text>
+  </g>
+  <text x="620" y="592" text-anchor="middle" font-size="13" font-weight="bold">Elastic Load Balancing</text>
+  <!-- CloudFront -> ALB arrow -->
+  <line x1="832" y1="174" x2="700" y2="512" stroke="#232F3E" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="790" y="330" text-anchor="middle" font-size="11" fill="#333">HTTPS</text>
+
+  <!-- App subnets AZ1 -->
+  <g>
+    <rect x="110" y="606" width="460" height="170" fill="#EAF2FE" rx="4"/>
+    <text x="130" y="632" font-size="14" font-weight="bold" fill="#2E73B8">🔒 App Subnet</text>
+    <rect x="130" y="644" width="420" height="120" fill="none" stroke="#ED7100" stroke-width="1.6" stroke-dasharray="7,4" rx="4"/>
+    <text x="340" y="664" text-anchor="middle" font-size="12" fill="#ED7100">Auto Scaling group — App tier</text>
+    <rect x="180" y="678" width="80" height="64" fill="#FF9900" rx="4"/>
+    <text x="220" y="706" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">EC2</text>
+    <text x="220" y="722" text-anchor="middle" fill="#ffffff" font-size="10">app server</text>
+    <rect x="280" y="678" width="80" height="64" fill="#FF9900" rx="4"/>
+    <text x="320" y="706" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">EC2</text>
+    <text x="320" y="722" text-anchor="middle" fill="#ffffff" font-size="10">app server</text>
+    <text x="470" y="712" text-anchor="middle" font-size="12" fill="#ED7100" font-weight="bold">EC2 Instances</text>
+  </g>
+  <!-- App subnets AZ2 -->
+  <g>
+    <rect x="670" y="606" width="460" height="170" fill="#EAF2FE" rx="4"/>
+    <text x="690" y="632" font-size="14" font-weight="bold" fill="#2E73B8">🔒 App Subnet</text>
+    <rect x="690" y="644" width="420" height="120" fill="none" stroke="#ED7100" stroke-width="1.6" stroke-dasharray="7,4" rx="4"/>
+    <text x="900" y="664" text-anchor="middle" font-size="12" fill="#ED7100">Auto Scaling group — App tier</text>
+    <rect x="740" y="678" width="80" height="64" fill="#FF9900" rx="4"/>
+    <text x="780" y="706" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">EC2</text>
+    <text x="780" y="722" text-anchor="middle" fill="#ffffff" font-size="10">app server</text>
+    <rect x="840" y="678" width="80" height="64" fill="#FF9900" rx="4"/>
+    <text x="880" y="706" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">EC2</text>
+    <text x="880" y="722" text-anchor="middle" fill="#ffffff" font-size="10">app server</text>
+    <text x="1030" y="712" text-anchor="middle" font-size="12" fill="#ED7100" font-weight="bold">EC2 Instances</text>
+  </g>
+  <!-- ALB -> EC2 arrows -->
+  <line x1="560" y1="540" x2="400" y2="678" stroke="#232F3E" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="680" y1="540" x2="800" y2="678" stroke="#232F3E" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Cache subnets -->
+  <g>
+    <rect x="110" y="788" width="460" height="90" fill="#EAF2FE" rx="4"/>
+    <text x="130" y="814" font-size="14" font-weight="bold" fill="#2E73B8">🔒 Cache Subnet</text>
+    <rect x="200" y="824" width="280" height="44" fill="#3B48CC" rx="4"/>
+    <text x="340" y="844" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">ElastiCache — primary + replica</text>
+    <text x="340" y="858" text-anchor="middle" fill="#ffffff" font-size="10">Redis / Valkey cluster</text>
+  </g>
+  <g>
+    <rect x="670" y="788" width="460" height="90" fill="#EAF2FE" rx="4"/>
+    <text x="690" y="814" font-size="14" font-weight="bold" fill="#2E73B8">🔒 Cache Subnet</text>
+    <rect x="760" y="824" width="280" height="44" fill="#3B48CC" rx="4"/>
+    <text x="900" y="844" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold">ElastiCache — primary + replica</text>
+    <text x="900" y="858" text-anchor="middle" fill="#ffffff" font-size="10">Redis / Valkey cluster</text>
+  </g>
+  <!-- EC2 -> ElastiCache (cache-aside) -->
+  <line x1="300" y1="742" x2="300" y2="824" stroke="#3B48CC" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="320" y1="824" x2="320" y2="742" stroke="#3B48CC" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#arr)"/>
+  <text x="352" y="790" font-size="11" fill="#3B48CC">GET / SET (hit)</text>
+  <line x1="900" y1="742" x2="900" y2="824" stroke="#3B48CC" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="920" y1="824" x2="920" y2="742" stroke="#3B48CC" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#arr)"/>
+  <text x="952" y="790" font-size="11" fill="#3B48CC">GET / SET (hit)</text>
+
+  <!-- DB subnets -->
+  <g>
+    <rect x="110" y="890" width="460" height="62" fill="#EAF2FE" rx="4"/>
+    <text x="130" y="912" font-size="14" font-weight="bold" fill="#2E73B8">🔒 DB Subnet</text>
+    <rect x="200" y="918" width="280" height="30" fill="#3B48CC" rx="4"/>
+    <text x="340" y="938" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">Amazon RDS — primary</text>
+  </g>
+  <g>
+    <rect x="670" y="890" width="460" height="62" fill="#EAF2FE" rx="4"/>
+    <text x="690" y="912" font-size="14" font-weight="bold" fill="#2E73B8">🔒 DB Subnet</text>
+    <rect x="760" y="918" width="280" height="30" fill="#3B48CC" rx="4"/>
+    <text x="900" y="938" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">Amazon RDS — standby</text>
+  </g>
+  <!-- cache miss -> RDS (dashed) -->
+  <line x1="480" y1="846" x2="480" y2="918" stroke="#3B48CC" stroke-width="1.6" stroke-dasharray="5,4" marker-end="url(#arr)"/>
+  <text x="545" y="890" font-size="11" fill="#3B48CC">miss → query DB</text>
+  <!-- RDS replication -->
+  <line x1="480" y1="933" x2="740" y2="933" stroke="#3B48CC" stroke-width="1.6" marker-end="url(#arr)"/>
+  <text x="610" y="924" text-anchor="middle" font-size="11" fill="#3B48CC">sync replication</text>
+
+  <!-- cache node sync across AZs -->
+  <line x1="480" y1="846" x2="760" y2="846" stroke="#3B48CC" stroke-width="1.2" stroke-dasharray="4,4" marker-end="url(#arr)"/>
+  <text x="620" y="838" text-anchor="middle" font-size="10" fill="#3B48CC">cluster bus / failover</text>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <polygon points="0,0 9,4 0,8" fill="#232F3E"/>
+    </marker>
+  </defs>
+</svg>
