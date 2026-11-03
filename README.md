@@ -65,4 +65,4 @@ python cache.py   # watch hits, misses, and TTL expiry live
 Full quiz with answers: [quiz.md](quiz.md)
 
 ---
-*Day 28 of the cloud engineering series — one topic, one repo, every day.*
+*Day 28 of the cloud engineering series — one topic, one repo, every day. Part of the [daily cloud guide collection](https://github.com/sepkascurty-cpu?tab=repositories).*
